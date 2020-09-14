@@ -2,9 +2,8 @@
   "name": "m3-alecfarmer",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "scripts": {
-  },
+  "main": "server.js",
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alecfarmer/m3-alecfarmer.git"
