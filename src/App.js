@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
 import TodoList from './TodoList'
-import uuidv4 from 'uuid/v4'
+import './style.css'
+//import uuidv4 from 'uuid/v4'
+const {"v4": uuidv4} = require('uuid');
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -28,23 +30,25 @@ function App() {
         const name = todoNameRef.current.value
         if (name === '') return
         setTodos(prevTodos => {
-            return [...prevTodos, {id: uuidv4, name: name, complete: false}]
+            return [...prevTodos, {id: uuidv4(), name: name, complete: false}]
         })
         todoNameRef.current.value = null
     }
 
     function clearTodos() {
-        const newTodos = todos.filter(todo => !todos.complete)
+        const newTodos = todos.filter(todos => !todos.complete)
         setTodos(newTodos)
     }
 
     return (
         <>
-            <TodoList todos={todos} toggleTodo={toggleTodo} />
-            <input ref={todoNameRef} type="text" />
-            <button onClick={AddTodo}>Add Todo</button>
-            <button>onClick={clearTodos} Clear Completed</button>
-            <div>{todos.filter(todo => !todo.complete).length} left to do</div>
+            <div>
+                <TodoList todos={todos} toggleTodo={toggleTodo} />
+                <input ref={todoNameRef} type="text" />
+                <button className='button' onClick={AddTodo}>Add Todo</button>
+                <button className='button' onClick={clearTodos}> Clear Completed</button>
+                <div>{todos.filter(todo => !todo.complete).length} left to do</div>
+            </div>
         </>
     )
 }

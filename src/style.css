@@ -1,0 +1,18 @@
+.button {
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    width: 5%;
+    padding: 2px 12px;
+    margin: 4px 2px;
+    border-radius: 5px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.backColor {
+    background-color: aqua;
+}
