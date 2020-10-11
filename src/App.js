@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import TodoList from './components/TodoList'
+import "./styling/styles.css"
 const {"v4": uuidv4} = require('uuid');
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
@@ -40,17 +41,21 @@ function App() {
 
     return (
         <>
+        <div style={{display: "flexbox", alignItems: "center", margin: "auto", width: "50%", padding: "10px"}}>
             <div>
-                <TodoList todos={todos} toggleTodo={toggleTodo} />
+                <p style={{textAlign: "center"}}>
+                    <TodoList todos={todos} toggleTodo={toggleTodo} />
+                </p>
             </div>
-            <div>
+            <div style={{textAlign: "center"}}>
                 <input ref={todoNameRef} type="text" />
-                <div>{todos.filter(todo => !todo.complete).length} left to do</div>
+                <div style={{paddingTop: "10px", paddingBottom: "5px", fontSize: "20px"}}>{todos.filter(todo => !todo.complete).length} left to do</div>
             </div>
-            <div style={{backgroundColor: 'lightgray'}}>
+            <div style={{textAlign: "center"}}>
                 <button onClick={AddTodo}>Add Todo</button>
                 <button onClick={clearTodos}> Clear Completed</button>
             </div>
+        </div>
         </>
     )
 }

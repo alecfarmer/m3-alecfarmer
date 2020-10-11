@@ -1,0 +1,12 @@
+button {
+    background-color: transparent;
+    color: darkgrey;
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 6px 4px;
+    color: red;
+    font-size: 15px;
+    padding: 10px;
+}
+
